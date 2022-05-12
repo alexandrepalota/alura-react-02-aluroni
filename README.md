@@ -40,3 +40,7 @@ Install CSS Modules plugins on development environment.
 ### `npm install -D sass`
 
 Install SASS on development environment.
+
+### `npm install normalize.css`
+
+Install a CSS reset.
