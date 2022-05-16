@@ -9,6 +9,7 @@ export default function Menu() {
 
     const [search, setSearch] = useState<string>('')
     const [filter, setFilter] = useState<number | null>(null)
+    const [ordenator, setOrdenator] = useState('')
 
     return (
         <main>
@@ -23,7 +24,7 @@ export default function Menu() {
                 <Finder search={search} setSearch={setSearch} />
                 <div className={styles.menu__filters}>
                     <Filters filter={filter} setFilter={setFilter} />
-                    <Ordenator />
+                    <Ordenator ordenator={ordenator} setOrdenator={setOrdenator} />
                 </div>
             </section>
         </main>
