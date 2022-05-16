@@ -27,7 +27,7 @@ export default function Menu() {
                     <Filters filter={filter} setFilter={setFilter} />
                     <Ordenator ordenator={ordenator} setOrdenator={setOrdenator} />
                 </div>
-                <Itens/>
+                <Itens search={search} filter={filter} ordenator={ordenator}/>
             </section>
         </main>
     )
