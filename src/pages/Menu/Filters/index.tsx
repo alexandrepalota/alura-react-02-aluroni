@@ -1,13 +1,10 @@
 import filters from './filters.json'
 
-interface Option {
-    id: number;
-    label: string;
-}
+type IOption = typeof filters[0]
 
 export default function Filters() {
 
-    function selectFilter(option: Option) {
+    function selectFilter(option: IOption) {
         console.log(option)
     }
 
