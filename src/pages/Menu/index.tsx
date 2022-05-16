@@ -4,6 +4,7 @@ import Finder from './Finder'
 import { useState } from 'react'
 import Filters from './Filters'
 import Ordenator from './Ordenator'
+import Itens from './Itens'
 
 export default function Menu() {
 
@@ -26,6 +27,7 @@ export default function Menu() {
                     <Filters filter={filter} setFilter={setFilter} />
                     <Ordenator ordenator={ordenator} setOrdenator={setOrdenator} />
                 </div>
+                <Itens/>
             </section>
         </main>
     )
