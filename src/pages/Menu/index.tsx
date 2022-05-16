@@ -3,6 +3,7 @@ import { ReactComponent as Logo} from 'assets/logo.svg'
 import Finder from './Finder'
 import { useState } from 'react'
 import Filters from './Filters'
+import Ordenator from './Ordenator'
 
 export default function Menu() {
 
@@ -18,10 +19,11 @@ export default function Menu() {
                 <div className={styles.header__text}>A casa do código e da massa</div>
             </header>
             <section className={styles.menu}>
-                <h3 className={styles.menu__title}>Cardápío</h3>
+                <h3 className={styles.menu__title}>Cardápio</h3>
                 <Finder search={search} setSearch={setSearch} />
                 <div className={styles.menu__filters}>
                     <Filters filter={filter} setFilter={setFilter} />
+                    <Ordenator />
                 </div>
             </section>
         </main>
