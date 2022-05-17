@@ -58,3 +58,7 @@ In this project, the option "To check syntax, find problems, and enforce code st
 ### `npx eslint ./src --fix`
 
 ESLint fixes all the code issues from ./src folder.
+
+After that, an error about "React must be in scope when using jsx" will persist. To ignore this error, the following instruction must be added to the rules on .eslintrc.json:
+
+`"react/react-in-jsx-scope": "off"`
