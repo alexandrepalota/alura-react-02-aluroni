@@ -1,3 +1,4 @@
+import NavMenu from 'components/NavMenu';
 import menu from 'data/menu.json';
 import styles from './Home.module.scss';
 
@@ -6,6 +7,7 @@ export default function Home() {
   recommendedDishes = recommendedDishes.sort(() => 0.5 - Math.random()).splice(0, 3);
   return (
     <section>
+      <NavMenu />
       <h3 className={styles.title}>
           Recomendações da cozinha
       </h3>
