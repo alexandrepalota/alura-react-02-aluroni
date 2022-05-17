@@ -11,7 +11,7 @@ interface Props {
 
 export default function Itens(props: Props) {
     const [list, setList] = useState(menu)
-    const {search, filter} = props
+    const {search, filter, ordenator} = props
 
     function testSearch(title: string) {
         // the 'i' tells RegExp to ignore case
@@ -24,10 +24,23 @@ export default function Itens(props: Props) {
         return true
     }
 
+    function sort(newList: typeof menu) {
+        switch(ordenator) {
+            case 'porcao':
+                return newList.sort((a, b) => a.size > b.size ? 1 : -1)
+            case 'qtd_pessoas':
+                return newList.sort((a, b) => a.serving > b.serving ? 1 : -1)
+            case 'preco':
+                return newList.sort((a, b) => a.price > b.price ? 1 : -1)
+            default:
+                return newList
+        }
+    }
+
     useEffect(() => {
         const newList = menu.filter(item => testSearch(item.title) && testFilter(item.category.id));
-        setList(newList)
-    }, [search, filter])
+        setList(sort(newList))
+    }, [search, filter, ordenator])
     return (
         <div className={styles.itens}>
             {list.map(item => (
