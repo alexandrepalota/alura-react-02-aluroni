@@ -6,6 +6,7 @@ import DefaultLayout from 'components/DefaultLayout';
 import About from 'pages/About';
 import Footer from 'components/Footer';
 import NotFound from 'pages/NotFound';
+import Dish from 'pages/Dish';
 
 export default function AppRouter() {
   return (
@@ -18,6 +19,7 @@ export default function AppRouter() {
             <Route path='cardapio' element={<Menu />} />
             <Route path='sobre' element={<About />} />
           </Route>
+          <Route path='prato/:id' element={<Dish />}/>
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
