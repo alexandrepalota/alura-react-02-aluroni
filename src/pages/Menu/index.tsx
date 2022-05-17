@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Filters from './Filters';
 import Ordenator from './Ordenator';
 import Itens from './Itens';
-import NavMenu from 'components/NavMenu';
 
 export default function Menu() {
 
@@ -14,7 +13,6 @@ export default function Menu() {
 
   return (
     <main>
-      <NavMenu />
       <header className={styles.header}>
         <div className={styles.header__text}>A casa do código e da massa</div>
       </header>
