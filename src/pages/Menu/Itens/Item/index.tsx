@@ -1,7 +1,7 @@
-import logo from "assets/logo.svg";
-import styles from "./Item.module.scss";
-import menu from "../itens.json";
-import classNames from 'classnames'
+import logo from 'assets/logo.svg';
+import styles from './Item.module.scss';
+import menu from '../itens.json';
+import classNames from 'classnames';
 
 type Props = typeof menu[0];
 

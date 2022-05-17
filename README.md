@@ -44,3 +44,17 @@ Install SASS on development environment.
 ### `npm install normalize.css`
 
 Install a CSS reset.
+
+### `npm install classnames`
+
+Install calssNames, a simple JavaScript utility for conditionally joining classNames together.
+
+## ESLint
+
+### `npm init @eslint/config`
+
+In this project, the option "To check syntax, find problems, and enforce code style" was choosen.
+
+### `npx eslint ./src --fix`
+
+ESLint fixes all the code issues from ./src folder.

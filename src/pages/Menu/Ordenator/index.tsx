@@ -1,8 +1,8 @@
-import styles from "./Ordenator.module.scss";
-import options from "./options.json";
-import { useState } from "react";
-import classNames from "classnames";
-import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
+import styles from './Ordenator.module.scss';
+import options from './options.json';
+import { useState } from 'react';
+import classNames from 'classnames';
+import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
 interface Props {
   ordenator: string;
@@ -11,13 +11,13 @@ interface Props {
 
 export default function Ordenator({ ordenator, setOrdenator }: Props) {
   const [open, setOpen] = useState(false);
-  const ordenatorName = ordenator && options.find(option => option.value === ordenator)?.name
+  const ordenatorName = ordenator && options.find(option => option.value === ordenator)?.name;
 
   return (
     <button
       className={classNames({
-          [styles.ordenator]: true,
-          [styles['ordenator--active']]: ordenator !== ''
+        [styles.ordenator]: true,
+        [styles['ordenator--active']]: ordenator !== ''
       })}
       onClick={() => setOpen(!open)}
       onBlur={
@@ -33,7 +33,7 @@ export default function Ordenator({ ordenator, setOrdenator }: Props) {
       <div
         className={classNames({
           [styles.ordenator__options]: true,
-          [styles["ordenator__options--active"]]: open,
+          [styles['ordenator__options--active']]: open,
         })}
       >
         {options.map((option) => (
