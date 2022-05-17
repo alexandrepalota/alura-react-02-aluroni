@@ -1,9 +1,10 @@
-import styles from './Menu.module.scss';
-import Finder from './Finder';
 import { useState } from 'react';
+import Finder from './Finder';
 import Filters from './Filters';
 import Ordenator from './Ordenator';
 import Itens from './Itens';
+import stylesTheme from 'styles/Theme.module.scss';
+import styles from './Menu.module.scss';
 
 export default function Menu() {
 
@@ -13,7 +14,7 @@ export default function Menu() {
 
   return (
     <section className={styles.menu}>
-      <h3 className={styles.menu__title}>Cardápio</h3>
+      <h3 className={stylesTheme.title}>Cardápio</h3>
       <Finder search={search} setSearch={setSearch} />
       <div className={styles.menu__filters}>
         <Filters filter={filter} setFilter={setFilter} />
