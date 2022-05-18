@@ -3,6 +3,7 @@ import menu from 'data/menu.json';
 import stylesTheme from 'styles/Theme.module.scss';
 import styles from './Home.module.scss';
 import ourHome from 'assets/nossa_casa.png';
+import { Dish } from 'types/Dishes';
 
 export default function Home() {
   
@@ -10,7 +11,7 @@ export default function Home() {
   recommendedDishes = recommendedDishes.sort(() => 0.5 - Math.random()).splice(0, 3);
   const navitgate = useNavigate();
 
-  function redirectToDetails(dish: typeof menu[0]) {
+  function redirectToDetails(dish: Dish) {
     navitgate(`/prato/${dish.id}`, {state: {dish}, replace: true });
   }
 
