@@ -1,11 +1,19 @@
+import { useNavigate } from 'react-router-dom';
 import menu from 'data/menu.json';
 import stylesTheme from 'styles/Theme.module.scss';
 import styles from './Home.module.scss';
 import ourHome from 'assets/nossa_casa.png';
 
 export default function Home() {
+  
   let recommendedDishes = [...menu];
   recommendedDishes = recommendedDishes.sort(() => 0.5 - Math.random()).splice(0, 3);
+  const navitgate = useNavigate();
+
+  function redirectToDetails(dish: typeof menu[0]) {
+    navitgate(`/prato/${dish.id}`, {state: {dish}, replace: true });
+  }
+
   return (
     <section>
       <h3 className={stylesTheme.title}>
@@ -17,7 +25,9 @@ export default function Home() {
             <div className={styles.recommended__image}>
               <img src={item.photo} alt={item.title} />
             </div>
-            <button className={styles.recommended__button}>Ver mais</button>
+            <button
+              className={styles.recommended__button}
+              onClick={() => redirectToDetails(item)}>Ver mais</button>
           </div>
         ))}
       </div>
